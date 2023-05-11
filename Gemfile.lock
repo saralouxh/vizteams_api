@@ -66,6 +66,7 @@ GEM
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
+    bcrypt (3.1.18)
     bootsnap (1.16.0)
       msgpack (~> 1.2)
     builder (3.2.4)
@@ -83,6 +84,7 @@ GEM
     io-console (0.6.0)
     irb (1.6.4)
       reline (>= 0.3.0)
+    jwt (2.7.0)
     loofah (2.20.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -107,13 +109,12 @@ GEM
     net-smtp (0.3.3)
       net-protocol
     nio4r (2.5.9)
-    nokogiri (1.14.3-arm64-darwin)
-      racc (~> 1.4)
     nokogiri (1.14.3-x86-mingw32)
       racc (~> 1.4)
-    nokogiri (1.14.3-x86_64-linux)
+    nokogiri (1.14.3-x64-mingw-ucrt)
       racc (~> 1.4)
     pg (1.5.2)
+    pg (1.5.2-x64-mingw-ucrt)
     puma (5.6.5)
       nio4r (~> 2.0)
     racc (1.6.2)
@@ -154,7 +155,7 @@ GEM
     sqlite3 (1.6.2)
       mini_portile2 (~> 2.8.0)
     sqlite3 (1.6.2-arm64-darwin)
-    sqlite3 (1.6.2-x86_64-linux)
+    sqlite3 (1.6.2-x64-mingw-ucrt)
     thor (1.2.1)
     timeout (0.3.2)
     tzinfo (2.0.6)
@@ -168,12 +169,13 @@ GEM
 
 PLATFORMS
   arm64-darwin-22
-  x86-mingw32
-  x86_64-linux
+  x64-mingw-ucrt
 
 DEPENDENCIES
+  bcrypt
   bootsnap
   debug
+  jwt
   pg
   puma (~> 5.0)
   rack-cors
@@ -185,4 +187,4 @@ RUBY VERSION
    ruby 3.2.0p0
 
 BUNDLED WITH
-   2.4.1
+   2.4.12
