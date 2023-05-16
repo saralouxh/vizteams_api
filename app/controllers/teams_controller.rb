@@ -13,6 +13,11 @@ class TeamsController < ApplicationController
     render json: @team
   end
 
+  def show_members
+    current_team = Team.find(params[:id])
+    render json: current_team.team_members
+  end
+
 
   # POST /teams
   def create

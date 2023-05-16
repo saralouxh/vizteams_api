@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :teams
   resources :team_members
+  get '/teams/:id/team_members', to: 'teams#show_members'
   
 
 
