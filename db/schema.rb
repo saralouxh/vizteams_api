@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_16_153108) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_17_211720) do
   create_table "team_members", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -18,6 +18,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_16_153108) do
     t.string "lname"
     t.string "title"
     t.integer "team_id"
+    t.string "img_url"
   end
 
   create_table "teams", force: :cascade do |t|
@@ -34,4 +35,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_16_153108) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "team_members", "teams"
 end

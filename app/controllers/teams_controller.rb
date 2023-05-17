@@ -4,8 +4,7 @@ class TeamsController < ApplicationController
   # GET /teams
   def index
     @teams = Team.all
-
-    render json: @teams
+    render json: @teams, include: :team_members
   end
 
   # GET /teams/1
@@ -48,6 +47,7 @@ class TeamsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_team
       @team = Team.find(params[:id])
+      @teams = Team.all
     end
 
     # Only allow a list of trusted parameters through.
