@@ -49,6 +49,7 @@ group :development do
 end
 
 group :production do
+gem 'pg'
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end
