@@ -1,5 +1,6 @@
 class TeamMembersController < ApplicationController
   before_action :set_team_member, only: %i[ show update destroy ]
+  before_action :authorize_request
 
   # GET /team_members
   def index
