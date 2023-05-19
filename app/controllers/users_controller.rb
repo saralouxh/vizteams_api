@@ -9,6 +9,10 @@ class UsersController < ApplicationController
     render json: @current_user, status: :ok
   end
 
+  def index
+    render json: @current_user, status: :ok
+  end
+
   private
 
   def find_user
@@ -24,8 +28,8 @@ class UsersController < ApplicationController
   end
 
   def authorize_request
-    header = request.headers['Authorization']
-    header = header.split(' ').last if header
+    header = request.headers["Authorization"]
+    header = header.split(" ").last if header
     begin
       @decoded = JsonWebToken.decode(header)
       @current_user = User.find(@decoded[:user_id])
@@ -36,4 +40,3 @@ class UsersController < ApplicationController
     end
   end
 end
-
