@@ -11,6 +11,7 @@ module VizTeamsApi
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
     config.autoload_paths << "#{Rails.root}/lib"
+    config.active_record.sqlite3.represent_boolean_as_integer = true
 
 
 
