@@ -41,7 +41,9 @@ class TeamsController < ApplicationController
 
   # DELETE /teams/1
   def destroy
+    @team = Team.find(params[:id])
     @team.destroy
+    render json: @team
   end
 
   private
