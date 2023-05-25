@@ -40,13 +40,14 @@ class TeamMembersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_team_member
-      @team_member = TeamMember.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def team_member_params
-      params.require(:team_member).permit(:fname, :lname, :team_id, :title, :img_url)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_team_member
+    @team_member = TeamMember.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def team_member_params
+    params.require(:team_member).permit(:fname, :lname, :team_id, :title, :display_order, :img_url)
+  end
 end
